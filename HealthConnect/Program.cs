@@ -25,13 +25,11 @@ app.MapGet(
     "/",
     async (HttpContext context) =>
     {
-        var hospital = new Hospital(); // create an instance of the Hospital class
-        hospital.PrintDoctors(); // call the PrintDoctors method to print the list of doctors
-        hospital.PrintAddresses(); // call the PrintAddresses method to print the list of addresses
-        hospital.PrintPatients(); // call the PrintPatients method to print the list of patients
-        hospital.PrintRooms(); // call the PrintRooms method to print the list of rooms
+        Hospital hospital = new();
+        
+        hospital.PrintPatients();
 
-        await context.Response.WriteAsync("Lists printed!"); // output a message to the response
+        await context.Response.WriteAsync("Lists printed!");
     }
 );
 
