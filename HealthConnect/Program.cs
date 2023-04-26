@@ -22,11 +22,22 @@ var app = builder.Build();
 app.UseCors("AllowAll");
 
 app.MapGet(
-    "/",
+    "/patients",
     async (HttpContext context) =>
     {
         Hospital hospital = new();
         
+        hospital.PrintPatients();
+
+        await context.Response.WriteAsync("Lists printed!");
+    }
+);
+app.MapGet(
+    "/doctors",
+    async (HttpContext context) =>
+    {
+        Hospital hospital = new();
+
         hospital.PrintPatients();
 
         await context.Response.WriteAsync("Lists printed!");

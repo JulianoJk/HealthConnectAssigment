@@ -20,10 +20,15 @@ public class Hospital
             Console.WriteLine(
                 $"{patient.FirstName}\t{patient.LastName}\t{patient.Age}\t{patient.EntryDate}\t{patient.ExitDate}\t{patient.Address.Name}\t{patient.Room.Name}\t{patient.Doctor.FirstName} {patient.Doctor.LastName}"
             );
+            Console.WriteLine("Hello there");
         }
 
         Console.WriteLine();
     }
+    public void PrintDoctors()
+    {
+        DataSeeder dataSeeder = new DataSeeder();
+       
 
-
+    }
 }
