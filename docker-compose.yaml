@@ -7,12 +7,12 @@ networks:
 services:
   backend:
     build:
-      context: .
+      context: ./back_end
       dockerfile: Dockerfile
     ports:
       - "3001:80"
     volumes:
-      - ./HealthConnect/output:/app/output
+      -  ./back_end/HealthConnect/output:/app/output
     networks:
       - my-network
   # front-end:
