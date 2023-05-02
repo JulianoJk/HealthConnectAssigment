@@ -20,54 +20,37 @@ services:
     networks:
       - my-network
 
-  # backend:
+  backend:
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:80"
+    volumes:
+      - ./HealthConnect/output:/app/output
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      CONNECTION_STRING: ${CONNECTION_STRING}
+    depends_on:
+      - mysql
+    networks:
+      - my-network
+
+  # phpmyadmin:
   #   env_file:
   #     - .env
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile.dev
+  #   image: phpmyadmin/phpmyadmin:latest
+  #   restart: always
   #   ports:
-  #     - "3001:80"
-  #   volumes:
-  #     - ./HealthConnect:/app
+  #     - 8080:80
   #   environment:
-  #     ASPNETCORE_ENVIRONMENT: Development
-  #     CONNECTION_STRING: ${CONNECTION_STRING}
-  #   depends_on:
-  #     - mysql
+  #     PMA_HOST: mysql
+  #     MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
   #   networks:
   #     - my-network
 
-#  backend:
-#     env_file:
-#       - .env
-#     build:
-#       context: .
-#       dockerfile: Dockerfile.dev
-#     ports:
-#       - "3001:80"
-#     volumes:
-#       - ./HealthConnect:/app
-#     environment:
-#       ASPNETCORE_ENVIRONMENT: Development
-#     depends_on:
-#       - mysql
-#     networks:
-#       - my-network
-
-
-  phpmyadmin:
-    env_file:
-      - .env
-    image: phpmyadmin/phpmyadmin:latest
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      PMA_HOST: mysql
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-    networks:
-      - my-network
   # front-end:
   #   build: ./front-end
   #   container_name: front_end_c

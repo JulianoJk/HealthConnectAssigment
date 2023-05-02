@@ -28,7 +28,5 @@ public class Hospital
     public void PrintDoctors()
     {
         DataSeeder dataSeeder = new DataSeeder();
-       
-
     }
 }
