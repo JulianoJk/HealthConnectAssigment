@@ -2,7 +2,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 
-
 app.MapGet(
     "/",
     async (HttpContext context) =>
@@ -16,21 +15,38 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        
-        hospital.PrintPatients();
-
-        await context.Response.WriteAsync("Lists printed!");
+        string patientsJson = hospital.GetPatientsJson();
+        await context.Response.WriteAsync(patientsJson);
     }
 );
+
 app.MapGet(
     "/doctors",
     async (HttpContext context) =>
     {
         Hospital hospital = new();
+        string doctorsJson = hospital.GetDoctorsJson();
+        await context.Response.WriteAsync(doctorsJson);
+    }
+);
 
-        hospital.PrintPatients();
+app.MapGet(
+    "/addresses",
+    async (HttpContext context) =>
+    {
+        Hospital hospital = new();
+        string addressesJson = hospital.GetAddressesJson();
+        await context.Response.WriteAsync(addressesJson);
+    }
+);
 
-        await context.Response.WriteAsync("Lists printed!");
+app.MapGet(
+    "/rooms",
+    async (HttpContext context) =>
+    {
+        Hospital hospital = new();
+        string roomsJson = hospital.GetRoomsJson();
+        await context.Response.WriteAsync(roomsJson);
     }
 );
 
