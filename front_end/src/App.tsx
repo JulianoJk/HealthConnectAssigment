@@ -2,7 +2,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import Demo from './components/Demo';
+import PatientsComponent from './components/PatientsComponent';
 
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Demo />
+      <PatientsComponent />
     </QueryClientProvider>
   )
 }
