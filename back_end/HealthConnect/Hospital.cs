@@ -25,6 +25,7 @@ using HealthConnect.Model;
             {
                 var patientObject = new
                 {
+                    Id = patient.Id,
                     FirstName = patient.FirstName,
                     LastName = patient.LastName,
                     Age = patient.Age,
