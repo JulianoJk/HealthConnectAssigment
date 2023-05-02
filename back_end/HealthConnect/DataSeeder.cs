@@ -1,9 +1,10 @@
+using HealthConnect.Model;
 using System;
 using System.Collections.Generic;
 
-public static class DataSeeder
+public class DataSeeder
 {
-    public static List<Doctor> SeedDoctors()
+    public List<Doctor> SeedDoctors()
     {
         var doctors = new List<Doctor>
         {
@@ -129,7 +130,7 @@ public static class DataSeeder
         return doctors;
     }
 
-    public static List<Address> SeedAddresses()
+    public List<Address> SeedAddresses()
     {
         var addresses = new List<Address>
         {
@@ -255,7 +256,7 @@ public static class DataSeeder
         return addresses;
     }
 
-    public static List<Patient> SeedPatients(
+    public List<Patient> SeedPatients(
         List<Address> addresses,
         List<Room> rooms,
         List<Doctor> doctors
@@ -439,7 +440,7 @@ public static class DataSeeder
         return patients;
     }
 
-    public static List<Room> SeedRooms()
+    public List<Room> SeedRooms()
     {
         var rooms = new List<Room>
         {
