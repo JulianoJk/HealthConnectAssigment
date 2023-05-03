@@ -31,7 +31,7 @@ const RoomComponent = () => {
       {isLoading && <Loader size="30rem" />}
       {openRoomTable === true ? (
         !rooms.length ? (
-          <h3>No patients to display</h3>
+          <h3>No rooms to display</h3>
         ) : (
           <RoomTable data={rooms}></RoomTable>
         )

@@ -25,3 +25,12 @@ export interface Room {
   Name: string;
   PatientNames: string[];
 }
+export interface Address {
+  key: number;
+  Id: number;
+  Name: string;
+  Country: string;
+  City: string;
+  PostalCode: string;
+  PatientNames: string[];
+}
