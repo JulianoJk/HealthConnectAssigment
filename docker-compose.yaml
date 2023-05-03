@@ -3,25 +3,27 @@ version: "3.9"
 networks:
   my-network:
     driver: bridge
-
 services:
   backend:
     build:
       context: ./back_end
       dockerfile: Dockerfile
+    container_name: back_end_c
     ports:
       - "3001:80"
     volumes:
       -  ./back_end/HealthConnect/output:/app/output
     networks:
       - my-network
-  # front-end:
-  #   build: ./front-end
+  # frontend:
+  #   build:
+  #     context: ./front_end
+  #     dockerfile: Dockerfile
   #   container_name: front_end_c
   #   ports:
   #     - "3000:3000"
   #   stdin_open: true
   #   tty: true
   #   volumes:
-  #     - ./front-end:/usr/src/app/front_end
-  #     - /usr/src/app/front-end/node_modules
+  #     - ./front_end:/usr/src/app/front_end
+  #     - /usr/src/app/front_end/node_modules
