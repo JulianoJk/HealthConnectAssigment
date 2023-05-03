@@ -9,7 +9,6 @@ import {
   Center,
   TextInput,
   rem,
-  Box,
 } from "@mantine/core";
 import { keys } from "@mantine/utils";
 import {
@@ -18,7 +17,7 @@ import {
   IconChevronUp,
   IconSearch,
 } from "@tabler/icons-react";
-import { Patient } from "../models/types";
+import { Patient } from "../../models/types";
 
 const useStyles = createStyles((theme) => ({
   th: {
@@ -155,82 +154,80 @@ export function PatientsTable({ data }: TableSortProps) {
   ));
 
   return (
-    <Box sx={{ width: "90rem" }}>
-      <ScrollArea>
-        <TextInput
-          placeholder="Search by any field"
-          mb="md"
-          icon={<IconSearch size="0.9rem" stroke={1.5} />}
-          value={search}
-          onChange={handleSearchChange}
-        />
-        <Table
-          horizontalSpacing="md"
-          verticalSpacing="xs"
-          miw={700}
-          sx={{ tableLayout: "fixed" }}
-        >
-          <thead>
+    <ScrollArea>
+      <TextInput
+        placeholder="Search by any field"
+        mb="md"
+        icon={<IconSearch size="0.9rem" stroke={1.5} />}
+        value={search}
+        onChange={handleSearchChange}
+      />
+      <Table
+        horizontalSpacing="md"
+        verticalSpacing="xs"
+        miw={700}
+        sx={{ tableLayout: "fixed" }}
+      >
+        <thead>
+          <tr>
+            <Th
+              reversed={reverseSortDirection}
+              sorted={sortBy === "FirstName"}
+              onSort={() => setSorting("FirstName")}
+            >
+              First Name
+            </Th>
+            <Th
+              sorted={sortBy === "LastName"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("LastName")}
+            >
+              Last Name
+            </Th>
+            <Th
+              sorted={sortBy === "Age"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("Age")}
+            >
+              Age
+            </Th>
+            <Th
+              sorted={sortBy === "EntryDate"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("EntryDate")}
+            >
+              Entry Date
+            </Th>
+            <Th
+              sorted={sortBy === "ExitDate"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("ExitDate")}
+            >
+              Exit Date
+            </Th>
+            <Th
+              reversed={reverseSortDirection}
+              sorted={sortBy === "AddressName"}
+              onSort={() => setSorting("AddressName")}
+            >
+              Address
+            </Th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.length > 0 ? (
+            rows
+          ) : (
             <tr>
-              <Th
-                reversed={reverseSortDirection}
-                sorted={sortBy === "FirstName"}
-                onSort={() => setSorting("FirstName")}
-              >
-                First Name
-              </Th>
-              <Th
-                sorted={sortBy === "LastName"}
-                reversed={reverseSortDirection}
-                onSort={() => setSorting("LastName")}
-              >
-                Last Name
-              </Th>
-              <Th
-                sorted={sortBy === "Age"}
-                reversed={reverseSortDirection}
-                onSort={() => setSorting("Age")}
-              >
-                Age
-              </Th>
-              <Th
-                sorted={sortBy === "EntryDate"}
-                reversed={reverseSortDirection}
-                onSort={() => setSorting("EntryDate")}
-              >
-                Entry Date
-              </Th>
-              <Th
-                sorted={sortBy === "ExitDate"}
-                reversed={reverseSortDirection}
-                onSort={() => setSorting("ExitDate")}
-              >
-                Exit Date
-              </Th>
-              <Th
-                reversed={reverseSortDirection}
-                sorted={sortBy === "AddressName"}
-                onSort={() => setSorting("AddressName")}
-              >
-                Address
-              </Th>
+              <td colSpan={Object.keys(data[0]).length}>
+                <Text weight={500} align="center">
+                  Nothing found
+                </Text>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {rows.length > 0 ? (
-              rows
-            ) : (
-              <tr>
-                <td colSpan={Object.keys(data[0]).length}>
-                  <Text weight={500} align="center">
-                    Nothing found
-                  </Text>
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </Table>
-      </ScrollArea>
-    </Box>
+          )}
+        </tbody>
+      </Table>
+    </ScrollArea>
   );
 }
