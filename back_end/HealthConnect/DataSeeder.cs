@@ -173,9 +173,9 @@ public class DataSeeder
                 Age = 25,
                 EntryDate = new DateTime(2022, 1, 1),
                 ExitDate = new DateTime(2022, 1, 10),
-                Address = addresses[0],
-                Room = rooms[0],
-                Doctor = doctors[0]
+                Address = addresses[1],
+                Room = rooms[1],
+                Doctor = doctors[1]
             },
             new Patient
             {
@@ -258,7 +258,7 @@ public class DataSeeder
                 EntryDate = new DateTime(2011, 1, 1),
                 ExitDate = new DateTime(2011, 1, 10),
                 Address = addresses[7],
-                Room = rooms[0],
+                Room = rooms[1],
                 Doctor = doctors[4]
             },
             new Patient
@@ -271,7 +271,7 @@ public class DataSeeder
                 ExitDate = new DateTime(2012, 1, 10),
                 Address = addresses[8],
                 Room = rooms[1],
-                Doctor = doctors[0]
+                Doctor = doctors[1]
             },
             new Patient
             {
@@ -318,7 +318,7 @@ public class DataSeeder
                 EntryDate = new DateTime(2016, 1, 1),
                 ExitDate = new DateTime(2016, 1, 10),
                 Address = addresses[6],
-                Room = rooms[0],
+                Room = rooms[1],
                 Doctor = doctors[4]
             },
             new Patient
@@ -331,7 +331,7 @@ public class DataSeeder
                 ExitDate = new DateTime(2017, 1, 10),
                 Address = addresses[3],
                 Room = rooms[1],
-                Doctor = doctors[0]
+                Doctor = doctors[1]
             },
             new Patient
             {
@@ -360,14 +360,14 @@ public class DataSeeder
         };
 
         // Add patients to their respective addresses and rooms based on their patient address
-        addresses[0].Patients.Add(patients[5]);
-        addresses[0].Patients.Add(patients[1]);
+        addresses[1].Patients.Add(patients[5]);
+        addresses[1].Patients.Add(patients[1]);
         addresses[1].Patients.Add(patients[2]);
         addresses[1].Patients.Add(patients[6]);
         addresses[2].Patients.Add(patients[3]);
+        addresses[2].Patients.Add(patients[2]);
         addresses[2].Patients.Add(patients[13]);
         addresses[2].Patients.Add(patients[14]);
-        addresses[2].Patients.Add(patients[15]);
         addresses[2].Patients.Add(patients[15]);
         addresses[3].Patients.Add(patients[4]);
         addresses[5].Patients.Add(patients[12]);
@@ -377,13 +377,12 @@ public class DataSeeder
         addresses[9].Patients.Add(patients[10]);
         addresses[10].Patients.Add(patients[11]);
 
-        // Add patients to their respective doctors based on their patient doctor
-        doctors[0].Patients.Add(patients[0]);
-        doctors[0].Patients.Add(patients[8]);
-        doctors[0].Patients.Add(patients[13]);
+        // Add patients to their respective doctors
         doctors[1].Patients.Add(patients[1]);
         doctors[1].Patients.Add(patients[9]);
         doctors[1].Patients.Add(patients[14]);
+        doctors[1].Patients.Add(patients[8]);
+        doctors[1].Patients.Add(patients[13]);
         doctors[2].Patients.Add(patients[2]);
         doctors[2].Patients.Add(patients[10]);
         doctors[2].Patients.Add(patients[5]);
@@ -395,8 +394,7 @@ public class DataSeeder
         doctors[4].Patients.Add(patients[7]);
 
         // Add patients to their respective rooms based on their patient room
-        rooms[0].Patients.Add(patients[0]);
-        rooms[0].Patients.Add(patients[11]);
+        rooms[1].Patients.Add(patients[11]);
         rooms[1].Patients.Add(patients[1]);
         rooms[1].Patients.Add(patients[8]);
         rooms[1].Patients.Add(patients[13]);
