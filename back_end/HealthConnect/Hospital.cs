@@ -25,12 +25,12 @@ public class Hospital
         {
             var patientObject = new
             {
-                Id = patient.Id,
-                FirstName = patient.FirstName,
-                LastName = patient.LastName,
-                Age = patient.Age,
-                EntryDate = patient.EntryDate,
-                ExitDate = patient.ExitDate,
+                patient.Id,
+                patient.FirstName,
+                patient.LastName,
+                patient.Age,
+                patient.EntryDate,
+                patient.ExitDate,
                 AddressName = patient.Address.Name,
                 RoomName = patient.Room.Name,
                 DoctorName = patient.Doctor.FirstName + " " + patient.Doctor.LastName

@@ -223,7 +223,7 @@ public class DataSeeder
                 ExitDate = new DateTime(2008, 1, 10),
                 Address = addresses[4],
                 Room = rooms[4],
-                Doctor = doctors[4]
+                Doctor = doctors[3]
             },
             new Patient
             {
@@ -259,7 +259,7 @@ public class DataSeeder
                 ExitDate = new DateTime(2011, 1, 10),
                 Address = addresses[7],
                 Room = rooms[1],
-                Doctor = doctors[4]
+                Doctor = doctors[3]
             },
             new Patient
             {
@@ -282,7 +282,7 @@ public class DataSeeder
                 EntryDate = new DateTime(2013, 1, 1),
                 ExitDate = new DateTime(2013, 1, 10),
                 Address = addresses[9],
-                Room = rooms[8],
+                Room = rooms[7],
                 Doctor = doctors[1]
             },
             new Patient
@@ -294,7 +294,7 @@ public class DataSeeder
                 EntryDate = new DateTime(2014, 1, 1),
                 ExitDate = new DateTime(2014, 1, 10),
                 Address = addresses[10],
-                Room = rooms[8],
+                Room = rooms[7],
                 Doctor = doctors[2]
             },
             new Patient
@@ -305,7 +305,7 @@ public class DataSeeder
                 Age = 30,
                 EntryDate = new DateTime(2015, 1, 1),
                 ExitDate = new DateTime(2015, 1, 10),
-                Address = addresses[11],
+                Address = addresses[10],
                 Room = rooms[4],
                 Doctor = doctors[3]
             },
@@ -319,7 +319,7 @@ public class DataSeeder
                 ExitDate = new DateTime(2016, 1, 10),
                 Address = addresses[6],
                 Room = rooms[1],
-                Doctor = doctors[4]
+                Doctor = doctors[3]
             },
             new Patient
             {
@@ -358,56 +358,6 @@ public class DataSeeder
                 Doctor = doctors[1]
             },
         };
-
-        // Add patients to their respective addresses and rooms based on their patient address
-        addresses[1].Patients.Add(patients[5]);
-        addresses[1].Patients.Add(patients[1]);
-        addresses[1].Patients.Add(patients[2]);
-        addresses[1].Patients.Add(patients[6]);
-        addresses[2].Patients.Add(patients[3]);
-        addresses[2].Patients.Add(patients[2]);
-        addresses[2].Patients.Add(patients[13]);
-        addresses[2].Patients.Add(patients[14]);
-        addresses[2].Patients.Add(patients[15]);
-        addresses[3].Patients.Add(patients[4]);
-        addresses[5].Patients.Add(patients[12]);
-        addresses[6].Patients.Add(patients[7]);
-        addresses[7].Patients.Add(patients[8]);
-        addresses[8].Patients.Add(patients[9]);
-        addresses[9].Patients.Add(patients[10]);
-        addresses[10].Patients.Add(patients[11]);
-
-        // Add patients to their respective doctors
-        doctors[1].Patients.Add(patients[1]);
-        doctors[1].Patients.Add(patients[9]);
-        doctors[1].Patients.Add(patients[14]);
-        doctors[1].Patients.Add(patients[8]);
-        doctors[1].Patients.Add(patients[13]);
-        doctors[2].Patients.Add(patients[2]);
-        doctors[2].Patients.Add(patients[10]);
-        doctors[2].Patients.Add(patients[5]);
-        doctors[3].Patients.Add(patients[3]);
-        doctors[3].Patients.Add(patients[11]);
-        doctors[3].Patients.Add(patients[6]);
-        doctors[4].Patients.Add(patients[4]);
-        doctors[4].Patients.Add(patients[12]);
-        doctors[4].Patients.Add(patients[7]);
-
-        // Add patients to their respective rooms based on their patient room
-        rooms[1].Patients.Add(patients[11]);
-        rooms[1].Patients.Add(patients[1]);
-        rooms[1].Patients.Add(patients[8]);
-        rooms[1].Patients.Add(patients[13]);
-        rooms[2].Patients.Add(patients[2]);
-        rooms[2].Patients.Add(patients[14]);
-        rooms[3].Patients.Add(patients[5]);
-        rooms[3].Patients.Add(patients[3]);
-        rooms[4].Patients.Add(patients[4]);
-        rooms[4].Patients.Add(patients[11]);
-        rooms[5].Patients.Add(patients[7]);
-        rooms[7].Patients.Add(patients[15]);
-        rooms[8].Patients.Add(patients[9]);
-        rooms[8].Patients.Add(patients[10]);
 
         return patients;
     }
