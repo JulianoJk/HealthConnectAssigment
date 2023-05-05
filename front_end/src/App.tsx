@@ -7,6 +7,7 @@ import PatientsComponent from "./components/Patients/PatientsComponent";
 import DoctorsComponent from "./components/Doctors/DoctorsComponent";
 import RoomComponent from "./components/Rooms/RoomsComponent";
 import AddressComponent from "./components/Address/AddressComponent";
+import { NotFound } from "./components/NotFound/NotFound";
 
 export default function App() {
   const queryClient = new QueryClient();
@@ -41,7 +42,7 @@ export default function App() {
           <Route path="/doctors" element={<DoctorsComponent />} />
           <Route path="/rooms" element={<RoomComponent />} />
           <Route path="/address" element={<AddressComponent />} />
-          <Route path="/*" element={<PatientsComponent />} />
+          <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
