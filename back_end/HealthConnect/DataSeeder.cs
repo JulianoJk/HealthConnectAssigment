@@ -13,7 +13,7 @@ public class DataSeeder
                 Id = 1,
                 FirstName = "John",
                 LastName = "Smith",
-                Age = 35,
+                Age = 40,
                 Salary = 100000,
                 Patients = new List<Patient>()
             },
@@ -22,109 +22,28 @@ public class DataSeeder
                 Id = 2,
                 FirstName = "Jane",
                 LastName = "Doe",
-                Age = 40,
-                Salary = 120000,
+                Age = 50,
+                Salary = 200000,
                 Patients = new List<Patient>()
             },
             new Doctor
             {
                 Id = 3,
-                FirstName = "Mark",
-                LastName = "Johnson",
-                Age = 45,
-                Salary = 130000,
+                FirstName = "Bob",
+                LastName = "Smith",
+                Age = 60,
+                Salary = 300000,
                 Patients = new List<Patient>()
             },
             new Doctor
             {
                 Id = 4,
-                FirstName = "John",
-                LastName = "Smith",
-                Age = 35,
-                Salary = 100000,
+                FirstName = "Alice",
+                LastName = "Doe",
+                Age = 70,
+                Salary = 400000,
                 Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 5,
-                FirstName = "Mary",
-                LastName = "Johnson",
-                Age = 40,
-                Salary = 120000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 6,
-                FirstName = "Noah",
-                LastName = "Bird",
-                Age = 45,
-                Salary = 130000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 7,
-                FirstName = "Callum",
-                LastName = "Mills",
-                Age = 35,
-                Salary = 100000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 8,
-                FirstName = "Liam",
-                LastName = "Smith",
-                Age = 40,
-                Salary = 120000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 9,
-                FirstName = "Mason",
-                LastName = "Johnson",
-                Age = 45,
-                Salary = 130000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 10,
-                FirstName = "Jacob",
-                LastName = "Smith",
-                Age = 35,
-                Salary = 100000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 11,
-                FirstName = "Jocelyn",
-                LastName = "Vincent",
-                Age = 40,
-                Salary = 120000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 12,
-                FirstName = "Ava",
-                LastName = "Johnson",
-                Age = 45,
-                Salary = 130000,
-                Patients = new List<Patient>()
-            },
-            new Doctor
-            {
-                Id = 13,
-                FirstName = "Olivia",
-                LastName = "Smith",
-                Age = 35,
-                Salary = 100000,
-                Patients = new List<Patient>()
-            },
+            }
         };
 
         return doctors;
@@ -146,109 +65,91 @@ public class DataSeeder
             new Address
             {
                 Id = 2,
-                Name = "456 Park Ave",
-                Country = "USA",
-                City = "Los Angeles",
-                PostalCode = "90001",
+                Name = "Poseidonos 12",
+                Country = "Greece",
+                City = "Athens",
+                PostalCode = "18121",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 3,
-                Name = "789 Broad St",
-                Country = "USA",
-                City = "Chicago",
-                PostalCode = "60601",
+                Name = "Kifisias 12",
+                Country = "Greece",
+                City = "Athens",
+                PostalCode = "10721",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 4,
-                Name = "123 Main St",
-                Country = "USA",
-                City = "New York",
-                PostalCode = "10001",
+                Name = "Kaiserstrasse 12",
+                Country = "Germany",
+                City = "Berlin",
+                PostalCode = "10115",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 5,
-                Name = "456 Park Ave",
-                Country = "USA",
-                City = "Los Angeles",
-                PostalCode = "90001",
+                Name = "Kurfürstendamm 12",
+                Country = "Germany",
+                City = "Berlin",
+                PostalCode = "10719",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 6,
-                Name = "789 Broad St",
-                Country = "USA",
-                City = "Chicago",
-                PostalCode = "60601",
+                Name = "Rue de Rivoli 12",
+                Country = "France",
+                City = "Paris",
+                PostalCode = "75001",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 7,
-                Name = "123 Main St",
-                Country = "USA",
-                City = "New York",
-                PostalCode = "10001",
+                Name = "Rue de la Paix 12",
+                Country = "France",
+                City = "Paris",
+                PostalCode = "75002",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 8,
-                Name = "456 Park Ave",
-                Country = "USA",
-                City = "Los Angeles",
-                PostalCode = "90001",
+                Name = "Via del Corso 12",
+                Country = "Italy",
+                City = "Rome",
+                PostalCode = "00186",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 9,
-                Name = "789 Broad St",
-                Country = "USA",
-                City = "Chicago",
-                PostalCode = "60601",
+                Name = "Via dei Condotti 12",
+                Country = "Italy",
+                City = "Rome",
+                PostalCode = "00187",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 10,
-                Name = "123 Main St",
-                Country = "USA",
-                City = "New York",
-                PostalCode = "10001",
+                Name = "Calle de Alcalá 12",
+                Country = "Spain",
+                City = "Madrid",
+                PostalCode = "28014",
                 Patients = new List<Patient>()
             },
             new Address
             {
                 Id = 11,
-                Name = "456 Park Ave",
-                Country = "USA",
-                City = "Los Angeles",
-                PostalCode = "90001",
-                Patients = new List<Patient>()
-            },
-            new Address
-            {
-                Id = 12,
-                Name = "789 Broad St",
-                Country = "USA",
-                City = "Chicago",
-                PostalCode = "60601",
-                Patients = new List<Patient>()
-            },
-            new Address
-            {
-                Id = 13,
-                Name = "123 Main St",
-                Country = "USA",
-                City = "New York",
-                PostalCode = "10001",
+                Name = "Calle de Serrano 12",
+                Country = "Spain",
+                City = "Madrid",
+                PostalCode = "28001",
                 Patients = new List<Patient>()
             },
         };
@@ -272,18 +173,18 @@ public class DataSeeder
                 Age = 25,
                 EntryDate = new DateTime(2022, 1, 1),
                 ExitDate = new DateTime(2022, 1, 10),
-                Address = addresses[0],
-                Room = rooms[0],
-                Doctor = doctors[0]
+                Address = addresses[1],
+                Room = rooms[1],
+                Doctor = doctors[1]
             },
             new Patient
             {
                 Id = 2,
-                FirstName = "Tom",
-                LastName = "Smith",
-                Age = 30,
-                EntryDate = new DateTime(2022, 2, 1),
-                ExitDate = new DateTime(2022, 2, 10),
+                FirstName = "Michael",
+                LastName = "Scott",
+                Age = 40,
+                EntryDate = new DateTime(2005, 1, 1),
+                ExitDate = new DateTime(2005, 1, 10),
                 Address = addresses[1],
                 Room = rooms[1],
                 Doctor = doctors[1]
@@ -291,24 +192,23 @@ public class DataSeeder
             new Patient
             {
                 Id = 3,
-                FirstName = "Emma",
-                LastName = "Brown",
-                Age = 35,
-                EntryDate = new DateTime(2022, 3, 1),
-                ExitDate = new DateTime(2022, 3, 10),
+                FirstName = "Dwight",
+                LastName = "Schrute",
+                Age = 30,
+                EntryDate = new DateTime(2006, 1, 1),
+                ExitDate = new DateTime(2006, 1, 10),
                 Address = addresses[2],
                 Room = rooms[2],
                 Doctor = doctors[2]
             },
-            // 10 new Patient
             new Patient
             {
                 Id = 4,
-                FirstName = "Sarah",
-                LastName = "Johnson",
-                Age = 25,
-                EntryDate = new DateTime(2022, 1, 1),
-                ExitDate = new DateTime(2022, 1, 10),
+                FirstName = "Jim",
+                LastName = "Halpert",
+                Age = 30,
+                EntryDate = new DateTime(2007, 1, 1),
+                ExitDate = new DateTime(2007, 1, 10),
                 Address = addresses[3],
                 Room = rooms[3],
                 Doctor = doctors[3]
@@ -316,126 +216,148 @@ public class DataSeeder
             new Patient
             {
                 Id = 5,
-                FirstName = "Tom",
-                LastName = "Smith",
+                FirstName = "Pam",
+                LastName = "Beesly",
                 Age = 30,
-                EntryDate = new DateTime(2022, 2, 1),
-                ExitDate = new DateTime(2022, 2, 10),
+                EntryDate = new DateTime(2008, 1, 1),
+                ExitDate = new DateTime(2008, 1, 10),
                 Address = addresses[4],
                 Room = rooms[4],
-                Doctor = doctors[4]
+                Doctor = doctors[3]
             },
             new Patient
             {
                 Id = 6,
-                FirstName = "Emma",
-                LastName = "Brown",
-                Age = 35,
-                EntryDate = new DateTime(2022, 3, 1),
-                ExitDate = new DateTime(2022, 3, 10),
-                Address = addresses[5],
-                Room = rooms[5],
-                Doctor = doctors[5]
+                FirstName = "Ryan",
+                LastName = "Howard",
+                Age = 30,
+                EntryDate = new DateTime(2009, 1, 1),
+                ExitDate = new DateTime(2009, 1, 10),
+                Address = addresses[1],
+                Room = rooms[3],
+                Doctor = doctors[2]
             },
             new Patient
             {
                 Id = 7,
-                FirstName = "Sarah",
-                LastName = "Johnson",
-                Age = 25,
-                EntryDate = new DateTime(2022, 1, 1),
-                ExitDate = new DateTime(2022, 1, 10),
-                Address = addresses[6],
-                Room = rooms[6],
-                Doctor = doctors[6]
+                FirstName = "Andy",
+                LastName = "Bernard",
+                Age = 30,
+                EntryDate = new DateTime(2010, 1, 1),
+                ExitDate = new DateTime(2010, 1, 10),
+                Address = addresses[2],
+                Room = rooms[5],
+                Doctor = doctors[3]
             },
             new Patient
             {
                 Id = 8,
-                FirstName = "Tom",
-                LastName = "Smith",
+                FirstName = "Robert",
+                LastName = "California",
                 Age = 30,
-                EntryDate = new DateTime(2022, 2, 1),
-                ExitDate = new DateTime(2022, 2, 10),
+                EntryDate = new DateTime(2011, 1, 1),
+                ExitDate = new DateTime(2011, 1, 10),
                 Address = addresses[7],
-                Room = rooms[7],
-                Doctor = doctors[7]
+                Room = rooms[1],
+                Doctor = doctors[3]
             },
             new Patient
             {
                 Id = 9,
-                FirstName = "Emma",
-                LastName = "Brown",
-                Age = 35,
-                EntryDate = new DateTime(2022, 3, 1),
-                ExitDate = new DateTime(2022, 3, 10),
+                FirstName = "Kevin",
+                LastName = "Malone",
+                Age = 30,
+                EntryDate = new DateTime(2012, 1, 1),
+                ExitDate = new DateTime(2012, 1, 10),
                 Address = addresses[8],
-                Room = rooms[8],
-                Doctor = doctors[8]
+                Room = rooms[1],
+                Doctor = doctors[1]
             },
             new Patient
             {
                 Id = 10,
-                FirstName = "Sarah",
-                LastName = "Johnson",
-                Age = 25,
-                EntryDate = new DateTime(2022, 1, 1),
-                ExitDate = new DateTime(2022, 1, 10),
+                FirstName = "Angela",
+                LastName = "Martin",
+                Age = 30,
+                EntryDate = new DateTime(2013, 1, 1),
+                ExitDate = new DateTime(2013, 1, 10),
                 Address = addresses[9],
-                Room = rooms[9],
-                Doctor = doctors[9]
+                Room = rooms[7],
+                Doctor = doctors[1]
             },
             new Patient
             {
                 Id = 11,
-                FirstName = "Tom",
-                LastName = "Smith",
+                FirstName = "Oscar",
+                LastName = "Martinez",
                 Age = 30,
-                EntryDate = new DateTime(2022, 2, 1),
-                ExitDate = new DateTime(2022, 2, 10),
+                EntryDate = new DateTime(2014, 1, 1),
+                ExitDate = new DateTime(2014, 1, 10),
                 Address = addresses[10],
-                Room = rooms[10],
-                Doctor = doctors[10]
+                Room = rooms[7],
+                Doctor = doctors[2]
             },
             new Patient
             {
                 Id = 12,
-                FirstName = "Emma",
-                LastName = "Brown",
-                Age = 35,
-                EntryDate = new DateTime(2022, 3, 1),
-                ExitDate = new DateTime(2022, 3, 10),
-                Address = addresses[11],
-                Room = rooms[11],
-                Doctor = doctors[11]
+                FirstName = "Meredith",
+                LastName = "Palmer",
+                Age = 30,
+                EntryDate = new DateTime(2015, 1, 1),
+                ExitDate = new DateTime(2015, 1, 10),
+                Address = addresses[10],
+                Room = rooms[4],
+                Doctor = doctors[3]
             },
             new Patient
             {
                 Id = 13,
-                FirstName = "Emma",
-                LastName = "Brown",
-                Age = 35,
-                EntryDate = new DateTime(2022, 3, 1),
-                ExitDate = new DateTime(2022, 3, 10),
-                Address = addresses[12],
-                Room = rooms[12],
-                Doctor = doctors[12]
+                FirstName = "Creed",
+                LastName = "Bratton",
+                Age = 30,
+                EntryDate = new DateTime(2016, 1, 1),
+                ExitDate = new DateTime(2016, 1, 10),
+                Address = addresses[6],
+                Room = rooms[1],
+                Doctor = doctors[3]
+            },
+            new Patient
+            {
+                Id = 14,
+                FirstName = "Kelly",
+                LastName = "Kapoor",
+                Age = 30,
+                EntryDate = new DateTime(2017, 1, 1),
+                ExitDate = new DateTime(2017, 1, 10),
+                Address = addresses[3],
+                Room = rooms[1],
+                Doctor = doctors[1]
+            },
+            new Patient
+            {
+                Id = 15,
+                FirstName = "Toby",
+                LastName = "Flenderson",
+                Age = 30,
+                EntryDate = new DateTime(2018, 1, 1),
+                ExitDate = new DateTime(2018, 1, 10),
+                Address = addresses[3],
+                Room = rooms[2],
+                Doctor = doctors[1]
+            },
+            new Patient
+            {
+                Id = 16,
+                FirstName = "Stanley",
+                LastName = "Hudson",
+                Age = 30,
+                EntryDate = new DateTime(2019, 1, 1),
+                ExitDate = new DateTime(2019, 1, 10),
+                Address = addresses[3],
+                Room = rooms[7],
+                Doctor = doctors[1]
             },
         };
-
-        // Add patients to their respective addresses and rooms
-        addresses[0].Patients.Add(patients[0]);
-        addresses[1].Patients.Add(patients[1]);
-        addresses[2].Patients.Add(patients[2]);
-
-        rooms[0].Patients.Add(patients[0]);
-        rooms[1].Patients.Add(patients[1]);
-        rooms[2].Patients.Add(patients[2]);
-
-        // Add patients to their respective doctors
-        doctors[0].Patients.Add(patients[0]);
-        doctors[1].Patients.Add(patients[1]);
-        doctors[2].Patients.Add(patients[2]);
 
         return patients;
     }
@@ -447,31 +369,31 @@ public class DataSeeder
             new Room
             {
                 Id = 1,
-                Name = "Room 2",
+                Name = "Room 1",
                 Patients = new List<Patient>()
             },
             new Room
             {
                 Id = 2,
-                Name = "Room 4",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 3,
-                Name = "Room 6",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 4,
                 Name = "Room 2",
                 Patients = new List<Patient>()
             },
             new Room
             {
-                Id = 5,
+                Id = 3,
+                Name = "Room 3",
+                Patients = new List<Patient>()
+            },
+            new Room
+            {
+                Id = 4,
                 Name = "Room 4",
+                Patients = new List<Patient>()
+            },
+            new Room
+            {
+                Id = 5,
+                Name = "Room 5",
                 Patients = new List<Patient>()
             },
             new Room
@@ -483,43 +405,13 @@ public class DataSeeder
             new Room
             {
                 Id = 7,
-                Name = "Room 2",
+                Name = "Room 7",
                 Patients = new List<Patient>()
             },
             new Room
             {
                 Id = 8,
-                Name = "Room 4",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 9,
-                Name = "Room 6",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 10,
-                Name = "Room 2",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 11,
-                Name = "Room 4",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 12,
-                Name = "Room 6",
-                Patients = new List<Patient>()
-            },
-            new Room
-            {
-                Id = 13,
-                Name = "Room 6",
+                Name = "Room 8",
                 Patients = new List<Patient>()
             },
         };
