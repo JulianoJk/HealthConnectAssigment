@@ -15,15 +15,15 @@ services:
       -  ./back_end/HealthConnect/output:/app/output
     networks:
       - my-network
-  # frontend:
-  #   build:
-  #     context: ./front_end
-  #     dockerfile: Dockerfile
-  #   container_name: front_end_c
-  #   ports:
-  #     - "3000:3000"
-  #   stdin_open: true
-  #   tty: true
-  #   volumes:
-  #     - ./front_end:/usr/src/app/front_end
-  #     - /usr/src/app/front_end/node_modules
+  frontend:
+    build:
+      context: ./front_end
+      dockerfile: Dockerfile
+    container_name: front_end_c
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./front_end:/usr/src/app/front_end
+      - /usr/src/app/front_end/node_modules

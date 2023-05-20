@@ -19,5 +19,5 @@ COPY . .
 EXPOSE 3000
 
 # runs the comand npm start
-CMD ["yarn", "dev"]
+CMD ["yarn", "start"]
 
