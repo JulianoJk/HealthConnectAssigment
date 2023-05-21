@@ -122,7 +122,6 @@ export const RoomTable: React.FC<TableSortProps> = (props) => {
   const [sortedData, setSortedData] = useState<Room[]>(data);
   const [sortBy, setSortBy] = useState<keyof Room | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
-  console.log(data);
 
   const setSorting = (field: keyof Room) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;

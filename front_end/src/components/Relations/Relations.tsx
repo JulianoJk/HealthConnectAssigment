@@ -1,10 +1,5 @@
 import { Tabs } from "@mantine/core";
-import {
-  IconBed,
-  IconStethoscope,
-  IconMapPin,
-  IconMap2,
-} from "@tabler/icons-react";
+import { IconBed, IconStethoscope, IconMapPin } from "@tabler/icons-react";
 import { useState } from "react";
 import PatientsPerRoomTable from "./PatientsPerRoom/PatientsPerRoomComponent";
 import PatientPerAddressComponent from "./PatientsPerAddress/PatientPerAddressComponent";

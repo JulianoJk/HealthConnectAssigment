@@ -121,7 +121,6 @@ export const PatientsPerRoomTable: React.FC<TableSortProps> = (props) => {
   const [sortedData, setSortedData] = useState<IPatientPerRoom[]>(data);
   const [sortBy, setSortBy] = useState<keyof IPatientPerRoom | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
-  console.log(data);
 
   const setSorting = (field: keyof IPatientPerRoom) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
