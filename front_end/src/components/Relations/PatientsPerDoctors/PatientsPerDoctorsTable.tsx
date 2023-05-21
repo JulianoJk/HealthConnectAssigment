@@ -17,7 +17,7 @@ import {
   IconChevronUp,
   IconSearch,
 } from "@tabler/icons-react";
-import { Room } from "../../models/types";
+import { PatientsPerDoctor } from "../../../models/types";
 
 const useStyles = createStyles((theme) => ({
   th: {
@@ -43,8 +43,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 interface TableSortProps {
-  data: Room[];
-  displaySearchBar?: boolean;
+  data: PatientsPerDoctor[];
 }
 
 interface ThProps {
@@ -77,7 +76,7 @@ function Th({ children, reversed, sorted, onSort }: ThProps) {
   );
 }
 
-const filterData = (data: Room[], query: string) => {
+const filterData = (data: PatientsPerDoctor[], query: string) => {
   const keysToFilter = keys(data[0]);
   return data
 
@@ -89,17 +88,21 @@ const filterData = (data: Room[], query: string) => {
           .includes(query.toLowerCase().trim())
       )
     )
-    .sort((a, b) => a.Name.localeCompare(b.Name))
+    .sort((a, b) => a.DoctorName.localeCompare(b.DoctorName))
     .reverse();
 };
 
 const sortData = (
-  data: Room[],
+  data: PatientsPerDoctor[],
   {
     sortBy,
     reversed,
     search,
-  }: { sortBy: keyof Room | null; reversed: boolean; search: string }
+  }: {
+    sortBy: keyof PatientsPerDoctor | null;
+    reversed: boolean;
+    search: string;
+  }
 ) => {
   const sortedData = sortBy
     ? [...data].sort((a, b) => {
@@ -116,15 +119,13 @@ const sortData = (
   return search ? filterData(sortedData, search) : sortedData;
 };
 
-export const RoomTable: React.FC<TableSortProps> = (props) => {
-  const { data, displaySearchBar } = props;
+export function PatientsPerDoctorsTable({ data }: TableSortProps) {
   const [search, setSearch] = useState("");
-  const [sortedData, setSortedData] = useState<Room[]>(data);
-  const [sortBy, setSortBy] = useState<keyof Room | null>(null);
+  const [sortedData, setSortedData] = useState<PatientsPerDoctor[]>(data);
+  const [sortBy, setSortBy] = useState<keyof PatientsPerDoctor | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
-  console.log(data);
 
-  const setSorting = (field: keyof Room) => {
+  const setSorting = (field: keyof PatientsPerDoctor) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(reversed);
     setSortBy(field);
@@ -138,25 +139,26 @@ export const RoomTable: React.FC<TableSortProps> = (props) => {
       sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
     );
   };
-  const rows = sortedData.map((room, index) => (
+  const rows = sortedData.map((PatientsPerDoctor, index) => (
     <tr key={index}>
-      <td>{room.Name}</td>
-      <td>{room.PatientNames.length ? room.PatientNames : "Null"}</td>
+      <td>{PatientsPerDoctor.DoctorName}</td>
+      <td>
+        {PatientsPerDoctor.PatientNames.length
+          ? PatientsPerDoctor.PatientNames
+          : "Null"}
+      </td>
     </tr>
   ));
 
   return (
     <ScrollArea>
-      {displaySearchBar && (
-        <TextInput
-          placeholder="Search by any field"
-          mb="md"
-          icon={<IconSearch size="0.9rem" stroke={1.5} />}
-          value={search}
-          onChange={handleSearchChange}
-        />
-      )}
-
+      <TextInput
+        placeholder="Search by any field"
+        mb="md"
+        icon={<IconSearch size="0.9rem" stroke={1.5} />}
+        value={search}
+        onChange={handleSearchChange}
+      />
       <Table
         horizontalSpacing="md"
         verticalSpacing="xs"
@@ -167,10 +169,10 @@ export const RoomTable: React.FC<TableSortProps> = (props) => {
           <tr>
             <Th
               reversed={reverseSortDirection}
-              sorted={sortBy === "Name"}
-              onSort={() => setSorting("Name")}
+              sorted={sortBy === "DoctorName"}
+              onSort={() => setSorting("DoctorName")}
             >
-              Room Name
+              Doctor Name
             </Th>
             <Th
               reversed={reverseSortDirection}
@@ -197,4 +199,4 @@ export const RoomTable: React.FC<TableSortProps> = (props) => {
       </Table>
     </ScrollArea>
   );
-};
+}

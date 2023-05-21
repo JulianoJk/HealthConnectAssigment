@@ -8,15 +8,13 @@ import DoctorsComponent from "./components/Doctors/DoctorsComponent";
 import RoomComponent from "./components/Rooms/RoomsComponent";
 import AddressComponent from "./components/Address/AddressComponent";
 import { NotFound } from "./components/NotFound/NotFound";
-import { RelationsInner } from "./components/Relations/RelationsInner";
-
+import Relations from "./components/Relations/Relations";
 export default function App() {
   const queryClient = new QueryClient();
 
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
-
       <BrowserRouter>
         <HeaderResponsive
           links={[
@@ -47,7 +45,8 @@ export default function App() {
           <Route path="/doctors" element={<DoctorsComponent />} />
           <Route path="/rooms" element={<RoomComponent />} />
           <Route path="/address" element={<AddressComponent />} />
-          <Route path="/relations" element={<RelationsInner />} />
+          <Route path="/relations" element={<Relations />} />
+          <Route path="/relations/PPR" element={<DoctorsComponent />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
