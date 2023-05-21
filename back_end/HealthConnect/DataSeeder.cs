@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class DataSeeder
 {
-    public List<Doctor> SeedDoctors()
+    public List<Doctor> SeedDoctors(List<Patient> patients)
     {
         var doctors = new List<Doctor>
         {
@@ -415,6 +415,7 @@ public class DataSeeder
                 Patients = new List<Patient>()
             },
         };
+
         return rooms;
     }
 }

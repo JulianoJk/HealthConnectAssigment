@@ -1,4 +1,6 @@
-﻿namespace HealthConnect.Model
+﻿using System.Collections.Generic;
+
+namespace HealthConnect.Model
 {
     public class Address
     {

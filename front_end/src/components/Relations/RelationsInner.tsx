@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { createStyles, Navbar, getStylesRef, rem } from "@mantine/core";
 import {
-  IconSwitchHorizontal,
   IconStethoscope,
   IconMapPin,
   IconMap2,
@@ -97,6 +96,7 @@ export function RelationsInner() {
       key={item.label}
       onClick={(event) => {
         event.preventDefault();
+        console.log(item.label);
         setActive(item.label);
       }}
     >

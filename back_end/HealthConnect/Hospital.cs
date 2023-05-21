@@ -1,27 +1,36 @@
+using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using HealthConnect.Model;
 
 public class Hospital
 {
-    private readonly List<Patient> _patients;
-    private readonly List<Doctor> _doctors;
-    private readonly List<Address> _addresses;
-    private readonly List<Room> _rooms;
+    private List<Patient> patients;
+    private List<Address> addresses;
+    private List<Room> rooms;
+    private List<Doctor> doctors;
 
     public Hospital()
     {
-        DataSeeder dataSeeder = new();
-        _addresses = dataSeeder.SeedAddresses();
-        _rooms = dataSeeder.SeedRooms();
-        _doctors = dataSeeder.SeedDoctors();
-        _patients = dataSeeder.SeedPatients(_addresses, _rooms, _doctors);
+        addresses = new DataSeeder().SeedAddresses();
+        rooms = new DataSeeder().SeedRooms();
+        doctors = new DataSeeder().SeedDoctors(patients);
+        patients = new DataSeeder().SeedPatients(addresses, rooms, doctors);
+
+        // Update the patients list on the other lists
+        foreach (var patient in patients)
+        {
+            patient.Address.Patients.Add(patient);
+            patient.Room.Patients.Add(patient);
+            patient.Doctor.Patients.Add(patient);
+        }
     }
 
-    public string GetPatientsJson()
+    public string GetAllPatientsJson()
     {
         List<object> patientList = new();
 
-        foreach (Patient patient in _patients)
+        foreach (Patient patient in patients)
         {
             var patientObject = new
             {
@@ -42,11 +51,11 @@ public class Hospital
         return JsonSerializer.Serialize(patientList);
     }
 
-    public string GetDoctorsJson()
+    public string GetAllDoctorsJson()
     {
         List<object> doctorList = new();
 
-        foreach (Doctor doctor in _doctors)
+        foreach (Doctor doctor in doctors)
         {
             var doctorObject = new
             {
@@ -63,11 +72,11 @@ public class Hospital
         return JsonSerializer.Serialize(doctorList);
     }
 
-    public string GetAddressesJson()
+    public string GetAllAddressesJson()
     {
         List<object> addressList = new();
 
-        foreach (Address address in _addresses)
+        foreach (Address address in addresses)
         {
             var addressObject = new
             {
@@ -84,11 +93,11 @@ public class Hospital
         return JsonSerializer.Serialize(addressList);
     }
 
-    public string GetRoomsJson()
+    public string GetAllRoomsJson()
     {
         List<object> roomList = new();
 
-        foreach (Room room in _rooms)
+        foreach (Room room in rooms)
         {
             var roomObject = new
             {
@@ -102,11 +111,11 @@ public class Hospital
         return JsonSerializer.Serialize(roomList);
     }
 
-    public string GetPatientsPerRoomJson()
+    public string GetAllPatientsPerRoomJson()
     {
         List<object> patientsPerRoomList = new();
 
-        foreach (Room room in _rooms)
+        foreach (Room room in rooms)
         {
             var patientsPerRoomObject = new
             {
@@ -120,11 +129,11 @@ public class Hospital
         return JsonSerializer.Serialize(patientsPerRoomList);
     }
 
-    public string GetPatientsPerDoctorJson()
+    public string GetAllPatientsPerDoctorJson()
     {
         List<object> patientsPerDoctorList = new();
 
-        foreach (Doctor doctor in _doctors)
+        foreach (Doctor doctor in doctors)
         {
             var patientsPerDoctorObject = new
             {
@@ -138,11 +147,11 @@ public class Hospital
         return JsonSerializer.Serialize(patientsPerDoctorList);
     }
 
-    public string GetPatientsPerAddressJson()
+    public string GetAllPatientsPerAddressJson()
     {
         List<object> patientsPerAddressList = new();
 
-        foreach (Address address in _addresses)
+        foreach (Address address in addresses)
         {
             var patientsPerAddressObject = new
             {
@@ -156,21 +165,21 @@ public class Hospital
         return JsonSerializer.Serialize(patientsPerAddressList);
     }
 
-    public string GetAddressPerPatientJson()
+    public string GetAllAddressesPerPatientJson()
     {
-        List<object> addressPerPatientList = new();
+        List<object> addressesPerPatientList = new();
 
-        foreach (Patient patient in _patients)
+        foreach (Patient patient in patients)
         {
-            var addressPerPatientObject = new
+            var addressesPerPatientObject = new
             {
                 PatientName = patient.FirstName + " " + patient.LastName,
                 AddressName = patient.Address.Name
             };
 
-            addressPerPatientList.Add(addressPerPatientObject);
+            addressesPerPatientList.Add(addressesPerPatientObject);
         }
 
-        return JsonSerializer.Serialize(addressPerPatientList);
+        return JsonSerializer.Serialize(addressesPerPatientList);
     }
 }
