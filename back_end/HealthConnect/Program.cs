@@ -9,7 +9,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(
         "AllowAll",
-        builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }
+        builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }
     );
 });
 
@@ -21,7 +24,10 @@ app.UseCors("AllowAll");
 
 app.MapGet(
     "/",
-    async (HttpContext context) => { await context.Response.WriteAsync("Index route!"); }
+    async (HttpContext context) =>
+    {
+        await context.Response.WriteAsync("Index route!");
+    }
 );
 
 app.MapGet(
@@ -115,54 +121,12 @@ app.MapGet(
         await context.Response.WriteAsync(roomsJson);
     }
 );
-app.MapGet(
-    "/relations/patientPerRoom",
-    async (HttpContext context) =>
-    {
-        Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerRoomJson();
-        context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-        context.Response.ContentType = "application/json";
-        await context.Response.WriteAsync(roomsJson);
-    }
-);
-app.MapGet(
-    "/relations/patientsPerDoctor",
-    async (HttpContext context) =>
-    {
-        Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerDoctorJson();
-        context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-        context.Response.ContentType = "application/json";
-        await context.Response.WriteAsync(roomsJson);
-    }
-);
-app.MapGet(
-    "/relations/patientsPerAddress",
-    async (HttpContext context) =>
-    {
-        Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerAddressJson();
-        context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-        context.Response.ContentType = "application/json";
-        await context.Response.WriteAsync(roomsJson);
-    }
-);
-app.MapGet(
-    "/relations/addressPerPatient",
-    async (HttpContext context) =>
-    {
-        Hospital hospital = new();
-        string roomsJson = hospital.GetAddressPerPatientJson();
-        context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
-        context.Response.ContentType = "application/json";
-        await context.Response.WriteAsync(roomsJson);
-    }
-);
-
 
 app.UseRouting();
 
-app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();
