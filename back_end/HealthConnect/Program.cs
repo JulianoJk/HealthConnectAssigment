@@ -1,10 +1,18 @@
+using HealthConnect;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(
         "AllowAll",
-        builder => { builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader(); }
+        builder =>
+        {
+            builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+        }
     );
 });
 
@@ -16,7 +24,10 @@ app.UseCors("AllowAll");
 
 app.MapGet(
     "/",
-    async (HttpContext context) => { await context.Response.WriteAsync("Index route!"); }
+    async (HttpContext context) =>
+    {
+        await context.Response.WriteAsync("Index route!");
+    }
 );
 
 app.MapGet(
@@ -24,7 +35,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string patientsJson = hospital.GetPatientsJson();
+        string patientsJson = hospital.GetAllPatientsJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(patientsJson);
@@ -36,7 +47,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string doctorsJson = hospital.GetDoctorsJson();
+        string doctorsJson = hospital.GetAllDoctorsJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(doctorsJson);
@@ -48,7 +59,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string addressesJson = hospital.GetAddressesJson();
+        string addressesJson = hospital.GetAllAddressesJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(addressesJson);
@@ -60,7 +71,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string roomsJson = hospital.GetRoomsJson();
+        string roomsJson = hospital.GetAllRoomsJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(roomsJson);
@@ -71,7 +82,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerRoomJson();
+        string roomsJson = hospital.GetAllPatientsPerRoomJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(roomsJson);
@@ -82,7 +93,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerDoctorJson();
+        string roomsJson = hospital.GetAllPatientsPerDoctorJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(roomsJson);
@@ -93,7 +104,7 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string roomsJson = hospital.GetPatientsPerAddressJson();
+        string roomsJson = hospital.GetAllPatientsPerAddressJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(roomsJson);
@@ -104,16 +115,18 @@ app.MapGet(
     async (HttpContext context) =>
     {
         Hospital hospital = new();
-        string roomsJson = hospital.GetAddressPerPatientJson();
+        string roomsJson = hospital.GetAllAddressesPerPatientJson();
         context.Response.Headers.Add("Access-Control-Allow-Origin", "*");
         context.Response.ContentType = "application/json";
         await context.Response.WriteAsync(roomsJson);
     }
 );
 
-
 app.UseRouting();
 
-app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();

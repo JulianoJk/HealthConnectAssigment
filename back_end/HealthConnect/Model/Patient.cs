@@ -1,4 +1,6 @@
-﻿namespace HealthConnect.Model
+﻿using System;
+
+namespace HealthConnect.Model
 {
     public class Patient
     {
